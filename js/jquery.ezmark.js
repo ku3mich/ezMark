@@ -43,7 +43,7 @@
     	var $this = $(this);
     	var wrapTag = $this.attr('type') == 'checkbox' ? '<div class="'+defaultOpt.checkboxCls+'">' : '<div class="'+defaultOpt.radioCls+'">';
     	// for checkbox
-    	if( $this.attr('type') == 'checkbox') {
+    	if( $this.attr('type') == 'checkbox' && !$this.hasClass('ez-hide') )  {
     		$this.addClass(defaultOpt.hideCls).wrap(wrapTag).change(function() {
     			if( $(this).is(':checked') ) { 
     				$(this).parent().addClass(defaultOpt.checkedCls); 
@@ -55,7 +55,7 @@
 				$this.parent().addClass(defaultOpt.checkedCls);    		
     		}
     	} 
-    	else if( $this.attr('type') == 'radio') {
+    	else if( $this.attr('type') == 'radio' && !$this.hasClass('ez-hide') ) {
 
     		$this.addClass(defaultOpt.hideCls).wrap(wrapTag).change(function() {
     			// radio button may contain groups! - so check for group
